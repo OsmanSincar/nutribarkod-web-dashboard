@@ -1,16 +1,31 @@
 # NutriBarkod Web Dashboard
 
-NutriBarkod, barkodla ürün analizi ve kullanıcı profili/geçmiş yönetimi için hazırlanmış bir React web arayüzü projesidir. Arayüz tasarımı Figma Make ile oluşturulmuştur.
+A barcode-based product analysis dashboard with ingredient filtering and user profile/history screens. This repository contains the React frontend; the API backend is maintained separately.
 
-> Bu depo web arayüzünü içerir. API sunucusu bu depoya dahil değildir; giriş, kayıt, ürün analizi ve kullanıcı verileri için ayrıca çalışan bir backend gerekir.
+## Features
 
-## Gereksinimler
+- Barcode scanning and product lookup interface
+- Product ingredient and nutrition analysis views
+- Personalized ingredient filters
+- User profile and analysis history screens
 
-- Node.js 20 veya üzeri
+## Architecture
+
+The Vite application provides the browser UI and sends API requests to a separately hosted backend. Authentication, product analysis, and user data require that backend to be available.
+
+## Tech stack
+
+- React, TypeScript, Vite
+- Tailwind CSS and shadcn/ui
+- ZXing barcode scanning
+
+## Requirements
+
+- Node.js 20+
 - npm
-- API uç noktalarını sağlayan bir backend (backend özelliklerini kullanmak için)
+- A compatible backend for API-dependent features
 
-## Kurulum ve çalıştırma
+## Getting started
 
 ```bash
 npm install
@@ -18,35 +33,29 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Windows PowerShell kullanıyorsanız ortam dosyasını `Copy-Item .env.example .env.local` komutuyla kopyalayabilirsiniz. Geliştirme sunucusu terminalde gösterilen yerel adreste açılır.
+In PowerShell, copy the environment template with `Copy-Item .env.example .env.local`. Vite prints the local development URL in the terminal.
 
-## Ortam değişkenleri
+## Configuration
 
-| Değişken | Açıklama | Varsayılan |
+| Variable | Description | Default |
 | --- | --- | --- |
-| `VITE_API_BASE_URL` | Backend API kök adresi; `/api` ile bitirmeyin | `http://127.0.0.1:8000` |
+| `VITE_API_BASE_URL` | Backend API root URL; do not append `/api` | `http://127.0.0.1:8000` |
 
-Örnek: `VITE_API_BASE_URL=https://api.ornek.com`. Vite istemci değişkenleri tarayıcıya aktarılır; buraya gizli anahtar veya parola koymayın. `.env.local` Git dışında tutulur.
+Vite variables are bundled into browser code. Do not put passwords, private keys, or other secrets in them. Keep local overrides in `.env.local`, which is excluded from Git.
 
-## Üretim derlemesi
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Derleme çıktısı `dist/` klasörüne yazılır. Statik barındırma kullanırken API adresini dağıtım ortamında ayarlayın. Backend tarafında HTTPS, CORS ve kimlik doğrulama ayarları sunucuda yapılandırılmalıdır.
+The production bundle is written to `dist/`. Configure the API URL in the deployment environment and set up HTTPS, CORS, and authentication on the backend.
 
-## Teknolojiler
+## Design and attributions
 
-- React, TypeScript ve Vite
-- Tailwind CSS ve shadcn/ui tabanlı bileşenler
-- ZXing ile barkod tarama
+The interface was designed in Figma: [NutriBarkod Web Dashboard Design](https://www.figma.com/design/noGvatBJTVbgsOD1pn6uCm/NutriBarkod-Web-Dashboard-Design). See [ATTRIBUTIONS.md](ATTRIBUTIONS.md) for third-party components and image credits.
 
-## Katkı ve atıflar
+## License
 
-Kullanılan shadcn/ui bileşenleri ve Unsplash görselleri için lisans bilgileri [ATTRIBUTIONS.md](ATTRIBUTIONS.md) dosyasındadır. Proje arayüzü için referans Figma dosyası: [NutriBarkod Web Dashboard Design](https://www.figma.com/design/noGvatBJTVbgsOD1pn6uCm/NutriBarkod-Web-Dashboard-Design).
-
-## Lisans
-
-Projenin bu depoda yer alan özgün kodu [MIT Lisansı](LICENSE) ile sunulmaktadır. MIT lisansı kodun kullanımına, değiştirilmesine ve dağıtılmasına izin verir; lisans metninin ve telif bildirimlerinin korunmasını gerektirir. Üçüncü taraf bileşenler, görseller ve diğer varlıklar kendi lisans koşullarına tabidir; ayrıntılar için [ATTRIBUTIONS.md](ATTRIBUTIONS.md) dosyasına bakın.
+Original code in this repository is distributed under the [MIT License](LICENSE). Third-party assets may have separate terms; see the attribution file.
