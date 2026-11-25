@@ -49,4 +49,4 @@ Kullanılan shadcn/ui bileşenleri ve Unsplash görselleri için lisans bilgiler
 
 ## Lisans
 
-Bu depoda proje kodu için henüz bir lisans tanımlanmamıştır. Açık kaynak kullanımına izin vermek istiyorsanız depoyu yayımlamadan önce uygun bir lisans ekleyin. Üçüncü taraf bileşenlerin lisansları kendi koşullarına tabidir.
+Projenin bu depoda yer alan özgün kodu [MIT Lisansı](LICENSE) ile sunulmaktadır. MIT lisansı kodun kullanımına, değiştirilmesine ve dağıtılmasına izin verir; lisans metninin ve telif bildirimlerinin korunmasını gerektirir. Üçüncü taraf bileşenler, görseller ve diğer varlıklar kendi lisans koşullarına tabidir; ayrıntılar için [ATTRIBUTIONS.md](ATTRIBUTIONS.md) dosyasına bakın.
